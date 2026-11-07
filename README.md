@@ -14,7 +14,7 @@ For a manual Claude Code install from this repository, run:
 /plugin install momobird-team-memory --marketplace underestimatedme/momobird-team-memory-plugins
 ```
 
-Claude chat can use the skill in an active conversation. Claude Code also supports optional capture at the end of a turn. Set `MOMOBIRD_MEMORY_AUTO_PROJECT` to the absolute path of the repository when launching Claude Code. Use a connection authorized for that repository's MomoBird project. The hook gives Claude one opportunity to propose a reusable lesson and only runs in that directory.
+Claude can use the skill in an active conversation. This directory package uses the remote MCP connector and skill. The optional Claude Code capture hook is available in the manual package on the [main branch](https://github.com/underestimatedme/momobird-team-memory-plugins/tree/main).
 
 ## ChatGPT and Codex
 
