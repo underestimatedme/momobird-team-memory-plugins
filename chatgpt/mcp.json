@@ -3,7 +3,22 @@
   "mcpServers": {
     "momobird_memory": {
       "type": "streamable-http",
-      "url": "https://api.valley.atlaspaces.com/api/momobird/public/memory/plugin/mcp"
+      "url": "https://api.valley.atlaspaces.com/api/momobird/public/memory/plugin/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "cimd"
+            },
+            "resource": "https://api.valley.atlaspaces.com/api/momobird/public/memory/plugin/mcp",
+            "baseScopes": [
+              "team_memory:read_propose"
+            ],
+            "defaultScopes": []
+          }
+        }
+      }
     }
   }
 }
