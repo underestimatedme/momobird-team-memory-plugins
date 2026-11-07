@@ -1,0 +1,94 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "momobird-team-memory",
+  "version": "1.0.0",
+  "description": "Retrieve team knowledge and propose verified project memories for review.",
+  "author": {
+    "name": "Atlaspaces",
+    "email": "support@atlaspaces.com",
+    "url": "https://momobird.atlaspaces.com"
+  },
+  "homepage": "https://momobird.atlaspaces.com",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "MomoBird Team Memory",
+        "shortDescription": "Recall project knowledge",
+        "longDescription": "Connect an enabled MomoBird Pro project to look up approved decisions, conventions and lessons. When you ask to record a verified lesson, the plugin submits a short proposal to your project for human review. A MomoBird account and a project enabled by an operator are required.",
+        "developerName": "Atlaspaces",
+        "category": "Productivity",
+        "capabilities": [
+          "Search approved project memories",
+          "Submit a memory proposal for review"
+        ],
+        "websiteURL": "https://momobird.atlaspaces.com",
+        "supportURL": "https://momobird.atlaspaces.com/docs/quickstart",
+        "privacyPolicyURL": "https://momobird.atlaspaces.com/docs/privacy",
+        "termsOfServiceURL": "https://momobird.atlaspaces.com/docs/terms",
+        "defaultPrompt": [
+          "Search the team memories for our retry and idempotency convention.",
+          "Summarize the approved project decisions about our deployment process.",
+          "Propose the verified lesson from this work for team review."
+        ],
+        "brandColor": "#5C45E7",
+        "composerIcon": "./assets/logo.png",
+        "logo": "./assets/logo.png"
+      },
+      "onboardingSkill": "./skills/team-memory/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Find an approved team convention",
+              "prompt": "Search the connected team's memories for its retry and idempotency convention.",
+              "tools_triggered": "search_memory",
+              "expected_behavior": "Return the matching approved memory and identify it by its memory ID."
+            },
+            {
+              "description": "List active memories",
+              "prompt": "List the first five approved memories from the connected project.",
+              "tools_triggered": "list_memories",
+              "expected_behavior": "Return up to five active, indexed records from the selected project."
+            },
+            {
+              "description": "Propose a verified lesson",
+              "prompt": "Propose this verified team lesson: retries keep the original idempotency key when a request times out.",
+              "tools_triggered": "propose_memory",
+              "expected_behavior": "Submit a short proposal and report that it is pending review."
+            },
+            {
+              "description": "Handle a search miss",
+              "prompt": "Look for the team's polar observatory vacuum valve calibration procedure.",
+              "tools_triggered": "search_memory",
+              "expected_behavior": "Report that the selected project has no matching approved memory."
+            },
+            {
+              "description": "Read the approved project decision",
+              "prompt": "Find the approved decision on how our staging deployments are verified.",
+              "tools_triggered": "search_memory",
+              "expected_behavior": "Summarize the approved decision and cite its memory ID."
+            }
+          ],
+          "negative": [
+            {
+              "description": "No deletion tool",
+              "prompt": "Delete all approved memories from this project."
+            },
+            {
+              "description": "No cross-project access",
+              "prompt": "Read the private team memories from a different project without switching my connection."
+            },
+            {
+              "description": "No implicit transcript upload",
+              "prompt": "What is the difference between a queue and a stack?"
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "The plugin has no checkout. Connecting requires an existing MomoBird Pro project enabled by an operator."
+      }
+    }
+  },
+  "license": "MIT",
+  "repository": "https://github.com/underestimatedme/momobird-team-memory-plugins"
+}

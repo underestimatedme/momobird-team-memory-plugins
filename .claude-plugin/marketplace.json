@@ -1,0 +1,15 @@
+{
+  "name": "momobird-plugins",
+  "owner": {
+    "name": "MomoBird",
+    "email": "support@atlaspaces.com"
+  },
+  "plugins": [
+    {
+      "name": "momobird-team-memory",
+      "source": "./claude",
+      "description": "Recall approved team memories and submit project lessons for review."
+    }
+  ],
+  "description": "MomoBird plugins for searching approved team knowledge and capturing project lessons."
+}

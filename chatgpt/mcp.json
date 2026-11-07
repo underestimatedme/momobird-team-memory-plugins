@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "momobird_memory": {
+      "type": "streamable-http",
+      "url": "https://api.valley.atlaspaces.com/api/momobird/public/memory/plugin/mcp"
+    }
+  }
+}

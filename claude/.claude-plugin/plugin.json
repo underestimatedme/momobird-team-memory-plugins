@@ -1,0 +1,13 @@
+{
+  "name": "momobird-team-memory",
+  "version": "1.0.0",
+  "description": "Search approved MomoBird project memories and submit verified lessons for team review.",
+  "author": {
+    "name": "Atlaspaces",
+    "email": "support@atlaspaces.com"
+  },
+  "homepage": "https://momobird.atlaspaces.com",
+  "privacyPolicyUrl": "https://momobird.atlaspaces.com/docs/privacy",
+  "license": "MIT",
+  "repository": "https://github.com/underestimatedme/momobird-team-memory-plugins"
+}
